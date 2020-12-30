@@ -2,7 +2,7 @@
   "name": "demo1",
   "version": "0.0.1",
   "main": "scripts/index.js",
-  "description": "A react project template, built using webpack5. Contains user login, custom layout, custom theme, authority routing, i18n, etc. Use useRouter, useAsync, custom fetch, simple state management, etc.",
+  "description": "A react project template, built with webpack5, integrated eslint code specification, jest unit test, husky, server operation, proxy configuration, etc. Contains user login, custom layout, custom theme, authority routing, i18n, etc. Use useRouter, useAsync, custom fetch, simple state management, etc.",
   "sideEffects": [
     "*.css",
     "*.less"
