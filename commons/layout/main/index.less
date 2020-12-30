@@ -1,0 +1,133 @@
+@import '~@common/styles/config.less';
+@keyframes ani-fade-in{
+  0%{
+    opacity:0;
+    // height:0;
+    display:none;
+  }
+  1%{
+    opacity:0;
+    // height:auto;
+    display:block;
+  }
+  100%{
+    opacity:1;
+    // height:auto;
+    display:block;
+  }
+}
+@keyframes ani-fade-out{
+  0%{
+    opacity:1;
+    display:block;
+  }
+  99%{
+    opacity:0;
+    display:block;
+  }
+  100%{
+    opacity:0;
+    display:none;
+  }
+}
+@keyframes ani-scale-in{
+  0%{
+    transform:scale(0);
+    display:none;
+  }
+  1%{
+    transform:scale(0);
+    display:block;
+  }
+  100%{
+    transform:scale(1);
+    display:block;
+  }
+}
+@keyframes ani-scale-out{
+  0%{
+    transform:scale(1);
+    display:block;
+  }
+  99%{
+    transform:scale(0);
+    display:block;
+  }
+  100%{
+    transform:scale(0);
+    display:none;
+  }
+}
+@keyframes ani-left-in{
+  0%{
+    opacity:.3;
+    transform:translate(-32px,0,0);
+  }
+  100%{
+    opacity:1;
+    transform:translate(0,0,0);
+  }
+}
+@keyframes ani-bottom-in{
+  0%{
+    opacity:.3;
+    transform:translate(0,32px,0);
+  }
+  100%{
+    opacity:1;
+    transform:translate(0,0,0);
+  }
+}
+.page-container{
+  min-height:calc(100vh - @footerHeight - @headerHeight - @topbarHeight);
+  position:relative;
+  background-color:@pageBgColor;
+  // padding:15px;
+  .content{
+    overflow:hidden;
+    padding:10px;
+    &.ani-in{
+      animation:ani-left-in .4s;
+    }
+    &.ani-out{
+      animation:ani-scale-out .4s;
+    }
+  }
+}
+.breadcrumb{
+  overflow:hidden;
+  background-color:hsla(0,0%,0%,.12);
+  border:1px solid hsla(0,0%,0%,.06);
+  // color:#888;
+  // background-color:rgba(251,252,252,1);
+  // border:1px solid rgba(247,249,249,1);
+  height:@breadHeight;
+  line-height:@breadHeight;
+  padding:0 15px;
+  // border-radius:5px;
+  li{
+    display:block;
+    float:left;
+    &:not(:last-of-type){
+      margin-right:5px;
+      &::after{
+        font-weight:bolder;
+        content:"\203A";
+        margin-left:5px;
+        color:currentColor;
+      }
+    }
+    a{
+      color:@linkColor;//#777;
+      &:active,&.active{
+        color:@linkActiveColor;
+      }
+      &:hover{
+        color:@linkHoverColor;
+      }
+    }
+  }
+}
+
+
+
