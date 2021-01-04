@@ -1,4 +1,4 @@
-import { UserOutlined, PoweroffOutlined, RestOutlined } from '@ant-design/icons';
+import { UserOutlined, PoweroffOutlined, RestOutlined,ApiOutlined } from '@ant-design/icons';
 
 import themeList from '@app/configs/theme';
 
@@ -48,22 +48,6 @@ export const rightNav=({langCfg,user,projList})=>{
         },
       ],
     },
-    /* {
-      name:'项目入口',
-      type:'projectList',
-      Ricon:true,
-      children:[
-        {
-          name:'t1',
-        },
-        {
-          name:'t2',
-        },
-        {
-          name:'t3',
-        },
-      ],//projList,
-    }, */
     {
       // name:right['language'],
       name:right[language],
@@ -99,8 +83,33 @@ export const rightNav=({langCfg,user,projList})=>{
       type:'button',
       handle:item=>{
         storage.clear();
-        // location.href=location.href;
+        location.href='/';
       },
+    },
+    {
+      name:right['project_list'],
+      type:'projectList',
+      Ricon:true,
+      children:[
+        {
+          name:'layout',
+          icon:<ApiOutlined />,
+          type:'link',
+          link:'http://ihuxy.com:9301/test-app1/',
+        },
+        {
+          name:'projectTest',
+          icon:<ApiOutlined />,
+          type:'link',
+          link:'http://ihuxy.com:9501/',
+        },
+      ],
+    },
+    {
+      name:'PhoenixUI',
+      icon:<ApiOutlined />,
+      type:'link',
+      link:'http://ihuxy.com:8088/',
     },
   ];
 };

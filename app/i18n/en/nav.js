@@ -18,6 +18,7 @@ const nav={
     en_icon,
     jp_icon,
     clean_cookie:'clean_cookie',
+    project_list:'project list',
   },
 };
 

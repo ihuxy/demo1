@@ -36,6 +36,9 @@ const Index=props=>{
   },[]);
 
   const handleNavClick=item=>{
+    if(item.type==='link'){
+      return window.open(item.link);
+    }
     if(item.type==='language'){
       props.store.setState({'change-language':item.key});
     }

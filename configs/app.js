@@ -6,7 +6,7 @@ const app={
   DIST:'../dist',
   PUBLIC_DIR:'../public',
   DEV_ROOT_DIR:'',
-  PRD_ROOT_DIR:'/test1',
+  PRD_ROOT_DIR:'/',
   DEFAULT_TOKEN:'Basic 123456',
   PROXY_URI:'http://47.105.94.51:9202',
   SALT:'yiru',

@@ -18,6 +18,7 @@ const nav={
     en_icon,
     jp_icon,
     clean_cookie:'清缓',
+    project_list:'项目入口',
   },
 };
 

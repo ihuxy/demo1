@@ -22,7 +22,8 @@ const Index=props=>{
     if(code===200){
       message.success(msg);
       storage.set('token',token);
-      props.router.push('/');
+      // props.router.push('/');
+      location.href='/';
     }
   };
   
