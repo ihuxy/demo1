@@ -92,6 +92,12 @@ export const rightNav=({langCfg,user,projList})=>{
       Ricon:true,
       children:[
         {
+          name:'zbxtable',
+          icon:<ApiOutlined />,
+          type:'link',
+          link:'https://zbx.cactifans.com/',
+        },
+        {
           name:'layout',
           icon:<ApiOutlined />,
           type:'link',

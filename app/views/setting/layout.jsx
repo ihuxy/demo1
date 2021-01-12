@@ -25,7 +25,7 @@ const Index=props=>{
   const [size,setSize]=useState('10');
   const [menuType,setMenuType]=useState(false);
   const changeFontSize=useDebounce(value=>document.documentElement.style.setProperty('--rootSize',value),delay);
-  const changeLayout=useDebounce(value=>props.store.setState({'set-theme':{theme:value}}),delay);
+  const changeLayout=useDebounce((value,save=false)=>props.store.setState({'set-theme':{theme:value,save}}),delay);
   const changeTheme=(e,item)=>{
     // e.persist();
     item.value=e.target.value;
@@ -38,12 +38,12 @@ const Index=props=>{
     changeFontSize(`${value*100/16}%`);
   };
   const saveConfig=()=>{
-    
+    changeLayout(theme,true);
   };
   const sizes=theme.filter(v=>v.type==='text');
   const colors=theme.filter(v=>v.type==='color');
   return <div style={{color:'#333',backgroundColor:'#fff',padding:'10px 20px'}}>
-    {/* <Button type="primary" onClick={saveConfig}>保存</Button> */}
+    <Button type="primary" onClick={saveConfig}>保存配置</Button>
     <div style={{margin:'15px 0'}}>
       <span>切换横纵菜单：</span>
       <Switch checkedChildren="横" unCheckedChildren="纵" checked={menuType} onChange={type=>{

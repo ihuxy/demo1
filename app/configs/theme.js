@@ -1,3 +1,120 @@
+export const defaults=nameList=>[
+  {
+    key:'--maxWidth',
+    label:nameList['--maxWidth'],
+    value:'100%',
+    type:'text',
+  },
+  {
+    key:'--menuWidth',
+    label:nameList['--menuWidth'],
+    value:'180px',
+    type:'text',
+  },
+  {
+    key:'--collapseWidth',
+    label:nameList['--collapseWidth'],
+    value:'50px',
+    type:'text',
+  },
+  {
+    key:'--collapseMenuWidth',
+    label:nameList['--collapseMenuWidth'],
+    value:'160px',
+    type:'text',
+  },
+  {
+    key:'--headerHeight',
+    label:nameList['--headerHeight'],
+    value:'58px',
+    type:'text',
+  },
+  {
+    key:'--footerHeight',
+    label:nameList['--footerHeight'],
+    value:'40px',
+    type:'text',
+  },
+  {
+    key:'--breadHeight',
+    label:nameList['--breadHeight'],
+    value:'40px',
+    type:'text',
+  },
+  {
+    key:'--topbarHeight',
+    label:nameList['--topbarHeight'],
+    value:'0px',
+    type:'text',
+  },
+
+  {
+    key:'--bannerBgColor',
+    label:nameList['--bannerBgColor'],
+    value:'#21364a',
+    type:'color',
+  },
+  {
+    key:'--navBgColor',
+    label:nameList['--navBgColor'],
+    value:'#21364a',
+    type:'color',
+  },
+  {
+    key:'--menuBgColor',
+    label:nameList['--menuBgColor'],
+    value:'#2d4054',
+    type:'color',
+  },
+  /* {
+    key:'--deepMenuBgColor',
+    label:nameList['--deepMenuBgColor'],
+    value:'hsla(0,0%,0%,.03)',
+    type:'color',
+  }, */
+  {
+    key:'--appBgColor',
+    label:nameList['--appBgColor'],
+    value:'#eaeff2',
+    type:'color',
+  },
+  {
+    key:'--pageBgColor',
+    label:nameList['--pageBgColor'],
+    value:'#eaeff2',
+    type:'color',
+  },
+  {
+    key:'--footerBgColor',
+    label:nameList['--footerBgColor'],
+    value:'#ffffff',
+    type:'color',
+  },
+  {
+    key:'--appColor',
+    label:nameList['--appColor'],
+    value:'#ffffff',
+    type:'color',
+  },
+  {
+    key:'--linkColor',
+    label:nameList['--linkColor'],
+    value:'#f0f0f0',
+    type:'color',
+  },
+  {
+    key:'--linkHoverColor',
+    label:nameList['--linkHoverColor'],
+    value:'#40a9ff',
+    type:'color',
+  },
+  {
+    key:'--linkActiveColor',
+    label:nameList['--linkActiveColor'],
+    value:'#40a9ff',
+    type:'color',
+  },
+];
 export const theme1=nameList=>[
   {
     key:'--maxWidth',
@@ -585,6 +702,12 @@ export const skeleton=nameList=>[
 ];
 
 const themeList=nameList=>[
+  {
+    name:'defaults',//nameList['defaults'],
+    key:'defaults',
+    list:defaults(nameList),
+    type:'theme',
+  },
   {
     name:nameList['theme1'],
     key:'theme1',

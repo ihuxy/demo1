@@ -35,7 +35,7 @@ const Index=props=>{
   const themeList=getThemeList(langCfg.theme);
   const [menuType,setMenuType]=useState('sideMenu');
   const [collapsed,setCollapsed]=useState(false);
-  const [theme,setTheme]=useState(storage.get('theme')||themeList[3]);
+  const [theme,setTheme]=useState(storage.get('theme')||themeList[0]);
   // const [themeKey,setThemeKey]=useState('dark');
   useEffect(()=>{
     if(props.store?.subscribe){
@@ -47,14 +47,14 @@ const Index=props=>{
           key:'custom',
           list,
         };
-        storage.set('theme',newTheme);
+        result.save&&storage.set('theme',newTheme);
         setTheme(newTheme);
       });
       subscribe('set-menuType',result=>setMenuType(result.menuType?'navMenu':'sideMenu'));
     }
   },[]);
   const switchTheme=type=>{
-    const current=themeList.find(v=>v.key===type)||themeList[3];
+    const current=themeList.find(v=>v.key===type)||themeList[0];
     storage.set('theme',current);
     setTheme(current);
   };
