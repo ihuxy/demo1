@@ -8,7 +8,7 @@ export const defaults=nameList=>[
   {
     key:'--menuWidth',
     label:nameList['--menuWidth'],
-    value:'180px',
+    value:'200px',
     type:'text',
   },
   {
