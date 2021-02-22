@@ -67,7 +67,7 @@ const Index=props=>{
       <div className="nav">
         <div className="nav-wrap">
           <div className="nav-left">
-            <NavList list={leftList} collapsed={collapsed} click={handleNavClick} />
+            <NavList list={leftList} click={handleNavClick} collapsed={collapsed} />
           </div>
           {navMenu?.length?<HoriMenu menu={navMenu} />:null}
           <div className="nav-right">

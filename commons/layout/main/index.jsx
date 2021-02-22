@@ -13,7 +13,8 @@ export const breadcrumb=(current,bread)=><div className="breadcrumb">
 
 const time=350;
 const Index=props=>{
-  const {menu,current,children,curPath,collapsed,handleCollapse,store}=props;
+  const {menu,current,children,collapsed,handleCollapse,store}=props;
+  const curPath=current.slice(-1)[0]?.path;
   const langCfg=store?.getState('langCfg')??{};
   const {main:{bread}}=langCfg;
   const hasMenu=menu?.length;
@@ -23,6 +24,7 @@ const Index=props=>{
   const pathRef=useRef(curPath);
   const timer=useRef();
   useEffect(()=>{
+    const curPath=current.slice(-1)[0]?.path;
     if(curPath!==pathRef.current){
       pathRef.current=curPath;
       addClass(viewRef.current,'ani-in');
@@ -31,7 +33,7 @@ const Index=props=>{
       },time);
     }
     return ()=>clearTimeout(timer.current);
-  },[curPath]);
+  },[current]);
   return <div className="frame-container">
     {
       hasMenu?<aside className="frame-aside">

@@ -30,16 +30,15 @@ const formatMenu=(menu,curPath,type='sideMenu',cb=null)=>{
 
 const Index=props=>{
   const {menu,current,store}=props;
-  const curPath=current.slice(-1)[0]?.path;
-  const langCfg=store?.getState('langCfg')??{};
-  const themeList=getThemeList(langCfg.theme);
+  const langCfg=store?.getState('langCfg');
+  const themeList=getThemeList(langCfg?.theme);
   const [menuType,setMenuType]=useState('sideMenu');
   const [collapsed,setCollapsed]=useState(false);
   const [theme,setTheme]=useState(storage.get('theme')||themeList[0]);
   // const [themeKey,setThemeKey]=useState('dark');
   useEffect(()=>{
-    if(props.store?.subscribe){
-      const {subscribe}=props.store;
+    const {subscribe}=store||{};
+    if(subscribe){
       subscribe('set-theme',result=>{
         const list=result.theme;
         const newTheme={
@@ -59,6 +58,7 @@ const Index=props=>{
     setTheme(current);
   };
   const handleCollapse=status=>setCollapsed(prev=>status==null?!prev:status);
+  
   const {sideMenu,navMenu}=formatMenu(menu,current[0]?.path,menuType);
 
   return <div className={`frame${collapsed?' collapsed':''}`} style={a2o(theme.list)}>
@@ -67,7 +67,7 @@ const Index=props=>{
       <Header {...props} navMenu={navMenu} handleCollapse={handleCollapse} collapsed={collapsed} switchTheme={switchTheme} theme={theme} />
     </header>
     <main className="frame-main">
-      <Main {...props} curPath={curPath} menu={sideMenu} collapsed={collapsed} handleCollapse={handleCollapse} />
+      <Main {...props} menu={sideMenu} collapsed={collapsed} handleCollapse={handleCollapse} />
     </main>
     <footer className="frame-footer">
       <Footer />

@@ -1,6 +1,6 @@
 import {useState,useRef,useMemo,useEffect} from 'react';
 import {utils,use} from '@common';
-const {traverItem}=utils;
+const {traverItem,fixEle}=utils;
 const {useClickAway,useUpdate}=use;
 
 const NavItem=({click,item,collapsed})=>{
@@ -24,7 +24,7 @@ const NavItem=({click,item,collapsed})=>{
     {name?<span className="txt">{name}</span>:null}
     {ri}
   </div>:<>
-    {typeof icon==='string'?<i className={icon} />:(icon||null)}
+    {fixEle(icon)}
     {name?<span className="txt">{name}</span>:null}
     {ri}
   </>;
@@ -34,7 +34,7 @@ const NavItem=({click,item,collapsed})=>{
       {
         children.map(v=><li key={v.name}>
           <a onClick={e=>itemClick(e,v,true)} className={v.active?'active':''}>
-            {typeof v.icon==='string'?<i className={v.icon} />:(v.icon||null)}
+            {fixEle(v.icon)}
             <span style={{display:'inline-block'}}>{v.name}</span>
           </a>
         </li>)

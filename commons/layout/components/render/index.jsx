@@ -1,5 +1,6 @@
 import {useEffect,useRef} from 'react';
-import {Link} from '@common';
+import {Link,utils} from '@common';
+const {fixEle}=utils;
 
 const ulStyles={
   overflow:'hidden',
@@ -43,7 +44,7 @@ export const render=(data,toggle)=>data.map(v=>{
   if(hasChildren){
     return <li key={v.name} onClick={e=>toggle(e,v)} has-children="true" className={v.open?'open':''}>
       <Link to={v.path} className={active} preventDefault>
-        {typeof v.icon==='string'?<i className={v.icon} />:(v.icon||null)}
+        {fixEle(v.icon)}
         <span className="txt has-right-icon">{v.name}</span>
         <i className="coll-ico" />
       </Link>
@@ -52,7 +53,7 @@ export const render=(data,toggle)=>data.map(v=>{
   }
   return <li key={v.name}>
     <Link to={v.path} stopPropagation className={active}>
-      {typeof v.icon==='string'?<i className={v.icon} />:(v.icon||null)}
+      {fixEle(v.icon)}
       <span className="txt">{v.name}</span>
     </Link>
   </li>;
@@ -64,7 +65,7 @@ export const renderCollapsed=data=>data.map(v=>{
   if(hasChildren){
     return <li key={v.name} has-children="true">
       <Link to={v.path} className={active} preventDefault>
-        {typeof v.icon==='string'?<i className={v.icon} />:(v.icon||null)}
+        {fixEle(v.icon)}
         <span className="txt has-right-icon">{v.name}</span>
         <i className="coll-ico" />
       </Link>
@@ -73,7 +74,7 @@ export const renderCollapsed=data=>data.map(v=>{
   }
   return <li key={v.name}>
     <Link to={v.path} stopPropagation className={active}>
-      {typeof v.icon==='string'?<i className={v.icon} />:(v.icon||null)}
+      {fixEle(v.icon)}
       <span className="txt">{v.name}</span>
     </Link>
   </li>;

@@ -1,4 +1,5 @@
-import {Link} from '@common';
+import {Link,utils} from '@common';
+const {fixEle}=utils;
 import './index.less';
 const render=data=>data.map(v=>{
   const hasChildren=v.children&&v.children.length;
@@ -6,7 +7,7 @@ const render=data=>data.map(v=>{
   if(hasChildren){
     return <li key={v.name} has-children="true">
       <Link to={v.path} className={active} preventDefault>
-        {typeof v.icon==='string'?<i className={v.icon} />:(v.icon||null)}
+        {fixEle(v.icon)}
         <span className="txt has-right-icon">{v.name}</span>
         <i className="coll-ico" />
       </Link>
@@ -15,7 +16,7 @@ const render=data=>data.map(v=>{
   }
   return <li key={v.name}>
     <Link to={v.path} stopPropagation className={active}>
-      {typeof v.icon==='string'?<i className={v.icon} />:(v.icon||null)}
+      {fixEle(v.icon)}
       <span className="txt">{v.name}</span>
     </Link>
   </li>;

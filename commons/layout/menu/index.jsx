@@ -30,14 +30,14 @@ const Index=props=>{
     <ul className="tree-root">
       {width>1024&&collapsed?renderCollapsed(data):render(data,toggle)}
     </ul>
-    {/* <div className="menu-btbar">
+    <div className="menu-btbar">
       <h4 className="btbar-title">history list</h4>
       <ul className="btbar-list">
         {
           getList().reverse().map(({data},i)=><li key={`${data}-${i}`}><a href={data}>{data}</a></li>)
         }
       </ul>
-    </div> */}
+    </div>
   </div>;
 };
 

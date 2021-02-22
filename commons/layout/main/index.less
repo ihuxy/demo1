@@ -105,25 +105,28 @@
   line-height:@breadHeight;
   padding:0 15px;
   // border-radius:5px;
-  li{
-    display:block;
-    float:left;
-    &:not(:last-of-type){
-      margin-right:5px;
-      &::after{
-        font-weight:bolder;
-        content:"\203A";
-        margin-left:5px;
-        color:currentColor;
+  ul{
+    .clear();
+    li{
+      display:block;
+      float:left;
+      &:not(:last-of-type){
+        margin-right:5px;
+        &::after{
+          font-weight:bolder;
+          content:"\203A";
+          margin-left:5px;
+          color:currentColor;
+        }
       }
-    }
-    a{
-      color:@linkColor;//#777;
-      &:active,&.active{
-        color:@linkActiveColor;
-      }
-      &:hover{
-        color:@linkHoverColor;
+      a{
+        color:@linkColor;//#777;
+        &:active,&.active{
+          color:@linkActiveColor;
+        }
+        &:hover{
+          color:@linkHoverColor;
+        }
       }
     }
   }
