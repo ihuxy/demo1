@@ -28,13 +28,6 @@ app.use(bodyParser.json({limit:'20mb'}));
 app.use(bodyParser.urlencoded({limit:'20mb',extended:true}));
 app.use(compression());
 
-if(app.get('env')==='production'){
-  app.use(function(req,res,next) {
-    const protocol=req.get('x-forwarded-proto');
-    protocol==='https'?next():res.redirect('https://'+req.hostname+req.url);
-  });
-}
-
 const build=path.resolve(appName,BUILD_DIR);
 // app.use(express.static(build));
 

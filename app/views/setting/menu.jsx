@@ -8,7 +8,7 @@ import {DownOutlined,PlusOutlined,EditOutlined,DeleteOutlined,ExclamationCircleO
 
 import HandleModal from './menuModal';
 
-const {selectedHandle,updateId}=utils;
+const {selectedHandle,updateId,traverItem}=utils;
 
 const {TreeNode} = Tree;
 
@@ -122,13 +122,17 @@ const Index=props=>{
     }
     setVisible(false);
   };
+  const treeData=updateId(traverItem(item=>{
+    const icon=typeof item.icon?.render==='function'?<item.icon />:item.icon;
+    item.icon=icon;
+  })(menu),'key');
   return <div style={pageStyle}>
     <Tree
       showIcon
       defaultExpandAll
       switcherIcon={<DownOutlined />}
       titleRender={item=>treeDrop(item,{addFn,editFn,deleteFn})}
-      treeData={updateId(menu,'key')}
+      treeData={treeData}
       virtual={false}
     />
     {
