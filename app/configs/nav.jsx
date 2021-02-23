@@ -103,6 +103,12 @@ export const rightNav=({langCfg,user,projList})=>{
           link:'https://zbx.cactifans.com/',
         },
         {
+          name:'vue-demo',
+          icon:<ApiOutlined />,
+          type:'link',
+          link:'http://ihuxy.com:8501/',
+        },
+        {
           name:'layout',
           icon:<ApiOutlined />,
           type:'link',
