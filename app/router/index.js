@@ -154,6 +154,12 @@ const routers=nameList=>[
           return 'vue';
         },
       },
+      {
+        path:'/webgl',
+        name:'webgl',
+        icon:<LayoutOutlined />,
+        component:<h1>webgl</h1>,
+      },
     ],
   },
   {

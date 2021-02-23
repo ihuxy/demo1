@@ -1,4 +1,4 @@
-import { UserOutlined, PoweroffOutlined, RestOutlined,ApiOutlined } from '@ant-design/icons';
+import { UserOutlined, PoweroffOutlined, RestOutlined,ApiOutlined,GithubOutlined } from '@ant-design/icons';
 
 import themeList from '@app/configs/theme';
 
@@ -77,7 +77,7 @@ export const rightNav=({langCfg,user,projList})=>{
         },
       ],//projList,
     },
-    {
+    /* {
       name:right['clean_cookie'],
       icon:<RestOutlined />,
       type:'button',
@@ -85,6 +85,11 @@ export const rightNav=({langCfg,user,projList})=>{
         storage.clear();
         location.href='/';
       },
+    }, */
+    {
+      icon:<GithubOutlined />,
+      type:'link',
+      link:'https://github.com/ihuxy/demo1',
     },
     {
       name:right['project_list'],
